@@ -5,7 +5,7 @@ Calling `(forth)` in the repl will call forth the interpreter.
 
 Word definitions end with `end` instead of `;`.
 
-You can define a word like so ->    : `add1 1 + end`
+You can define a word like so ->   `: add1 1 + end`
 
 `2 add1` will remove the 2 from the stack and put 3.
 
