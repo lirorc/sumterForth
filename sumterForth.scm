@@ -37,6 +37,10 @@
           ((eq? input 'swap) (set! stack (cons (cadr stack)
                                                (cons (car stack)
                                                      (cddr stack)))))
+          ((eq? input 'rot) (set! stack `(,(caddr stack) .
+                                          (,(car stack) .
+                                          (,(cadr stack) .
+                                          ,(cdddr stack))))))
           ((eq? input '>) (if (> (cadr stack) (car stack))
                             (set! stack (cons -1 (cddr stack)))
                             (set! stack (cons 0 (cddr stack)))))
@@ -58,6 +62,7 @@
           ((eq? input '+) (set! stack (cons (+ (car stack)
                                                (cadr stack))
                                             (cddr stack))))
+          ((string? input) (begin (display input) (newline)))
           ((eq? input '.s) (display stack) (newline))
           ((eq? input '.) (if (pair? stack)
                             (begin
