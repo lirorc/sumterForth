@@ -27,9 +27,7 @@
           ((eq? input 'else) (set! stat #f))
           ((eq? input ':) (set! words (cons (def-word!) words)))
           ((eq? input 'drop) (if (pair? stack)
-                               (begin
-                                 (car stack)
-                                 (set! stack (cdr stack)))
+                               (set! stack (cdr stack))
                                (begin
                                  (display "STACK EMPTY!")
                                  (newline))))
