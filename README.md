@@ -9,7 +9,7 @@ You can define a word like so ->   `: add1 1 + df`
 
 `2 add1` will remove the 2 from the stack and put 3.
 
-`5 0 > if "North" else "South" then` works now. Yay!
+`21 12 > if "North" else 12 21 < if "South" else "Canada?" then then` will -hopefully- work.
 
 Use .s instead of .S , dup instead of DUP and so on. The code is very incomplete so most things won't work.
 
