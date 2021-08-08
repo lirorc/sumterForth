@@ -34,10 +34,11 @@
       (if (and (not (eq? (car stat) 'nop))
               (not (eq? (car stat) #f)))
         (cond
-          ((eq? input 'if) (if (eq? (car stack) 0)
-                             (set! stat (cons #f stat))
-                             (set! stat (cons #t stat)))
-                           (set! stack (cdr stack)))
+          ((eq? input 'if) (begin
+                             (if (eq? (car stack) 0)
+                               (set! stat (cons #f stat))
+                               (set! stat (cons #t stat)))
+                             (set! stack (cdr stack))))
           ((eq? input 'else))
           ((eq? input 'then))
           ((number? input) (set! stack (cons input stack)))
@@ -89,8 +90,6 @@
           (#t (begin (display "ERROR, UNDEFINED") (newline))))))
 
     (lambda ()
-      (display stat)
-      (newline)
       (let ((input (read)))
         (feval input)
         (cond ((eq? input 'exit)
