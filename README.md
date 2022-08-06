@@ -1,5 +1,5 @@
 # sumterForth
-An ugly and incomplete forth-like interpreter in scheme
+An ugly and incomplete forth-like interpreter in scheme using just a single closure
 
 Calling `(forth)` in the repl will call forth the interpreter.
 
